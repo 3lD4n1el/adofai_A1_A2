@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuego y Hielo — Clase de Español A1–A2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;700;800;900&family=Chakra+Petch:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ambiente -->
+<div class="tileBg" style="top:14%;left:5%;width:46px;height:46px"></div>
+<div class="tileBg" style="top:30%;left:90%;width:34px;height:34px;border-color:#ff6b3d;animation-duration:18s"></div>
+<div class="tileBg" style="top:62%;left:4%;width:28px;height:28px;border-color:#ff4ecb;animation-duration:11s"></div>
+<div class="tileBg" style="top:22%;left:62%;width:24px;height:24px;border-color:#b6ff3d;animation-duration:16s"></div>
+<div class="tileBg" style="top:70%;left:92%;width:40px;height:40px;animation-duration:20s"></div>
+<div id="orbit"><svg viewBox="0 0 74 74">
+  <circle cx="37" cy="37" r="26" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2" stroke-dasharray="5 6"/>
+  <circle cx="37" cy="11" r="9" fill="#ff6b3d"/>
+  <circle cx="37" cy="63" r="9" fill="#3dd6ff"/>
+</svg></div>
+<div id="track"><svg viewBox="0 0 1200 104" preserveAspectRatio="xMidYMax slice">
+  <g stroke="rgba(255,255,255,.14)" stroke-width="2" fill="rgba(255,255,255,.045)">
+    <rect x="40" y="52" width="40" height="40" transform="rotate(45 60 72)"/>
+    <rect x="130" y="52" width="40" height="40" transform="rotate(45 150 72)"/>
+    <rect x="220" y="52" width="40" height="40" transform="rotate(45 240 72)"/>
+    <rect x="330" y="46" width="44" height="44" transform="rotate(45 352 68)"/>
+    <rect x="440" y="52" width="40" height="40" transform="rotate(45 460 72)"/>
+    <rect x="540" y="44" width="44" height="44" transform="rotate(45 562 66)"/>
+    <rect x="650" y="52" width="40" height="40" transform="rotate(45 670 72)"/>
+    <rect x="760" y="48" width="42" height="42" transform="rotate(45 781 69)"/>
+    <rect x="880" y="52" width="40" height="40" transform="rotate(45 900 72)"/>
+    <rect x="980" y="44" width="44" height="44" transform="rotate(45 1002 66)"/>
+    <rect x="1090" y="52" width="40" height="40" transform="rotate(45 1110 72)"/>
+  </g>
+  <circle cx="352" cy="68" r="11" fill="#ff6b3d" opacity=".85"/>
+  <circle cx="562" cy="66" r="11" fill="#3dd6ff" opacity=".85"/>
+  <circle cx="1002" cy="66" r="9" fill="#ff4ecb" opacity=".7"/>
+</svg></div>
+<div id="beat"></div>
+<div id="cutin"><div class="big" id="cutinTxt">¡COMBO PERFECTO!</div><div class="sub">Fuego y Hielo · Academia del Ritmo</div></div>
+
+<div id="hud">
+  <div class="emblem"><i class="f"></i><i class="h"></i></div>
+  <div class="title">Academia del Ritmo <span>· Español A1–A2</span></div>
+  <div id="progressWrap"><div id="progressBar"></div><div id="runMark">🔥</div></div>
+  <div id="counter"><b>01</b> / 23</div>
+</div>
+
+<div class="nav" id="prev">‹</div>
+<div class="nav" id="next">›</div>
+
+<div id="deck">
+
+<!-- 0 · PORTADA -->
+<section class="slide" id="s0">
+  <div class="inner">
+    <div class="tagline">Juego de ritmo · Fuego y Hielo</div>
+    <div class="badge"><svg viewBox="0 0 200 150">
+      <g stroke="rgba(255,255,255,.22)" stroke-width="2" fill="rgba(255,255,255,.05)">
+        <rect x="16" y="86" width="30" height="30" transform="rotate(45 31 101)"/>
+        <rect x="66" y="86" width="30" height="30" transform="rotate(45 81 101)"/>
+        <rect x="116" y="86" width="30" height="30" transform="rotate(45 131 101)"/>
+      </g>
+      <circle cx="100" cy="58" r="34" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2" stroke-dasharray="6 7"/>
+      <circle cx="100" cy="24" r="15" fill="#ff6b3d"/>
+      <circle cx="95" cy="20" r="4" fill="#ffd23d"/>
+      <circle cx="100" cy="92" r="15" fill="#3dd6ff"/>
+      <circle cx="105" cy="88" r="4" fill="#eaffff"/>
+      <text x="20" y="40" font-size="24" fill="#ff4ecb" font-family="Rubik, sans-serif" font-weight="900">♪</text>
+      <text x="164" y="60" font-size="20" fill="#b6ff3d" font-family="Rubik, sans-serif" font-weight="900">♫</text>
+    </svg></div>
+    <h1>Fuego y <span class="accentH">Hielo</span>: la academia del ritmo</h1>
+    <p class="lead">Dos planetas giran por un camino de baldosas. Un error… y el nivel se rompe. Hoy aprendes a decir <b>cuántas veces</b> haces las cosas y a dar <b>órdenes</b> como en un tutorial. <span class="kr">리듬 게임으로 스페인어 배우기!</span></p>
+    <div class="recap">
+      <span>🎮 Nivel: A1–A2</span>
+      <span>🎧 BPM: ¡el que tú quieras!</span>
+    </div>
+    <button class="btn fire" data-go="1">▶ Empezar el nivel</button>
+  </div>
+</section>
+
+<!-- 1 · OBJETIVOS -->
+<section class="slide" id="s1">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz"></span>Pantalla de selección</div>
+    <h2>Tu misión de hoy</h2>
+    <div class="objectives">
+      <div class="obj" style="--qc:var(--hielo)"><span class="qz"></span><span class="mark">VOCAB</span> El ritmo, el nivel y los errores <span class="kr">· 어휘</span></div>
+      <div class="obj" style="--qc:var(--neon)"><span class="qz"></span><span class="mark">GRAMÁTICA</span> Siempre, a veces, nunca: el metrónomo 🎵 <span class="kr">· 빈도부사</span></div>
+      <div class="obj" style="--qc:var(--fuego)"><span class="qz"></span><span class="mark">GRAMÁTICA</span> ¡Pulsa! ¡Gira! ¡Escucha!: las órdenes 👆 <span class="kr">· 명령형</span></div>
+      <div class="obj" style="--qc:var(--lima)"><span class="qz"></span><span class="mark">LECTURA</span> Dos capítulos de la academia <span class="kr">· 독해</span></div>
+      <div class="obj" style="--qc:var(--oro)"><span class="qz"></span><span class="mark">COMBATE</span> El Metrónomo Roto y el Glitch Final <span class="kr">· 보스전</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · ROSTER -->
+<section class="slide" id="s2">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz"></span>Expediente · El equipo</div>
+    <h2>Los del <span class="accentN">camino</span></h2>
+    <p class="lead" style="font-size:15px">Toca cada carta para ver con qué frecuencia hace las cosas. <span class="kr">카드를 눌러 보세요!</span></p>
+    <div class="roster" id="roster"></div>
+  </div>
+</section>
+
+<!-- 3 · VOCABULARIO -->
+<section class="slide" id="s3">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz"></span>Equipo de misión · Vocabulario</div>
+    <h2>Las <span class="accentO">baldosas</span> nuevas</h2>
+    <p class="lead" style="font-size:15px">Ocho palabras nuevas. Toca para ver el coreano y un ejemplo. <span class="kr">새 단어 = 새 타일!</span></p>
+    <div class="cards" id="vocabCards"></div>
+  </div>
+</section>
+
+<!-- 4 · INTRUSO -->
+<section class="slide" id="s4">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz"></span>Actividad · Detecta el glitch</div>
+    <h2>¿Cuál es <span class="accentF">el intruso</span>?</h2>
+    <p class="lead" style="font-size:15px">Tres palabras son del mismo grupo. Una es un glitch… ¡encuéntrala! <span class="kr">글리치 단어를 찾아라!</span></p>
+    <div class="scene solo">
+      <svg viewBox="0 0 700 88" preserveAspectRatio="xMidYMax slice">
+        <defs><linearGradient id="pista1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1c38"/><stop offset="1" stop-color="#2a1a3a"/></linearGradient></defs>
+        <rect width="700" height="88" fill="url(#pista1)"/>
+        <g stroke="rgba(255,255,255,.16)" stroke-width="2" fill="rgba(255,255,255,.05)">
+          <rect x="60" y="42" width="28" height="28" transform="rotate(45 74 56)"/>
+          <rect x="150" y="42" width="28" height="28" transform="rotate(45 164 56)"/>
+          <rect x="240" y="36" width="30" height="30" transform="rotate(45 255 51)"/>
+          <rect x="340" y="42" width="28" height="28" transform="rotate(45 354 56)"/>
+          <rect x="440" y="34" width="30" height="30" transform="rotate(45 455 49)"/>
+          <rect x="540" y="42" width="28" height="28" transform="rotate(45 554 56)"/>
+          <rect x="630" y="38" width="28" height="28" transform="rotate(45 644 52)"/>
+        </g>
+        <circle cx="255" cy="51" r="12" fill="#ff6b3d"/>
+        <circle cx="455" cy="49" r="12" fill="#3dd6ff"/>
+        <g fill="#ff4ecb" opacity=".8"><text x="110" y="26" font-size="18" font-family="Rubik, sans-serif">♪</text><text x="500" y="24" font-size="15" font-family="Rubik, sans-serif">♫</text></g>
+      </svg>
+      <span class="lbl">Camino de baldosas</span>
+    </div>
+    <div class="roundtag" id="intrusoRound">Ronda 1 / 3</div>
+    <div class="intruso-words" id="intrusoWords"></div>
+    <div class="feedback" id="intrusoFb"></div>
+  </div>
+</section>
+
+<!-- 5 · FRECUENCIA COGNITIVO -->
+<section class="slide" id="s5">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--neon)"></span>Gramática cognitiva · I</div>
+    <h2>El <span class="accentN">metrónomo</span> de tu vida 🎵</h2>
+    <div class="cog">
+      <div class="panel cogbox">
+        <h3>La idea</h3>
+        <div class="beats" id="demoBeats">
+          <div class="bt on"></div><div class="bt on"></div><div class="bt on"></div><div class="bt on"></div><div class="bt on"></div>
+          <div class="bt on"></div><div class="bt on"></div><div class="bt on"></div><div class="bt on"></div><div class="bt on"></div>
+        </div>
+        <p class="bigidea">Imagina diez pulsos de una canción. ¿En cuántos haces la acción?<br><b>Siempre</b> = brillan los diez ✦✦✦✦✦✦✦✦✦✦<br><span class="hh">Nunca</span> = no brilla ninguno · silencio total <span class="kr">몇 번 하는지 = 빈도!</span></p>
+      </div>
+      <div class="panel cogbox">
+        <h3>La escala del ritmo</h3>
+        <div class="scale">
+          <div><span class="bar" style="width:100%"></span></div>
+          <div style="font-size:14px">🔥 <b>siempre</b> (10/10) · <b>casi siempre</b> (8)</div>
+          <div><span class="bar" style="width:60%"></span></div>
+          <div style="font-size:14px">🎵 <b>a menudo</b> (6) · <b>a veces</b> (4)</div>
+          <div><span class="bar" style="width:15%"></span></div>
+          <div style="font-size:14px">❄️ <b>casi nunca</b> (2) · <b>nunca</b> (0)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · TABLA FRECUENCIA -->
+<section class="slide" id="s6">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--neon)"></span>Gramática cognitiva · II</div>
+    <h2>¿Dónde va el <span class="accentN">adverbio</span>?</h2>
+    <div class="tables">
+      <table class="conj panel">
+        <caption>🎯 La posición</caption>
+        <tr><th>antes</th><td><span class="end">Siempre</span> practico por la noche.</td></tr>
+        <tr><th>después</th><td>Practico <span class="end">siempre</span> por la noche.</td></tr>
+        <tr><th>⚠️ nunca</th><td><span class="end">Nunca</span> pierdo el ritmo.</td></tr>
+        <tr><th>⚠️ o así</th><td><span class="end">No</span> pierdo <span class="end">nunca</span> el ritmo.</td></tr>
+      </table>
+      <table class="conj panel">
+        <caption>🔢 Contar las veces</caption>
+        <tr><th>1</th><td>una <span class="end">vez</span> por semana</td></tr>
+        <tr><th>2+</th><td>dos <span class="end">veces</span> al mes</td></tr>
+        <tr><th>todos</th><td><span class="end">todos los días</span> · cada día</td></tr>
+        <tr><th>¿…?</th><td>¿<span class="end">Con qué frecuencia</span> juegas?</td></tr>
+      </table>
+    </div>
+    <p class="notice">💡 Ojo: se dice una <b>vez</b>, pero dos <b>veces</b> (z → c). Y nunca digas «no siempre nunca»: <b>nunca</b> ya lleva el «no» adentro cuando va delante.</p>
+  </div>
+</section>
+
+<!-- 7 · BARRA DE RITMO -->
+<section class="slide" id="s7">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--neon)"></span>Actividad · Lee el metrónomo</div>
+    <h2>La barra de <span class="accentN">ritmo</span> 🎚️</h2>
+    <p class="lead" style="font-size:15px">Mira cuántos pulsos brillan y elige el adverbio correcto. <span class="kr">불빛을 보고 부사를 고르세요!</span></p>
+    <div class="forge-count" id="freqCount">Pulso 1 / 6</div>
+    <div class="beats" id="freqBeats"></div>
+    <div class="panel" style="width:100%;max-width:700px"><p class="forge-sentence" id="freqSentence"></p></div>
+    <div class="endings" id="freqOpts"></div>
+    <div class="feedback" id="freqFb"></div>
+  </div>
+</section>
+
+<!-- 8 · LECTURA 1 -->
+<section class="slide" id="s8">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--lima)"></span>Lectura 1 · Capítulo uno</div>
+    <h2>El planeta que llegaba tarde</h2>
+    <div class="scene">
+      <svg viewBox="0 0 760 96" preserveAspectRatio="xMidYMax slice">
+        <defs><linearGradient id="esc1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#141634"/><stop offset="1" stop-color="#2a1830"/></linearGradient></defs>
+        <rect width="760" height="96" fill="url(#esc1)"/>
+        <g stroke="rgba(255,255,255,.16)" stroke-width="2" fill="rgba(255,255,255,.05)">
+          <rect x="70" y="48" width="28" height="28" transform="rotate(45 84 62)"/>
+          <rect x="170" y="48" width="28" height="28" transform="rotate(45 184 62)"/>
+          <rect x="270" y="40" width="30" height="30" transform="rotate(45 285 55)"/>
+          <rect x="380" y="48" width="28" height="28" transform="rotate(45 394 62)"/>
+          <rect x="480" y="38" width="30" height="30" transform="rotate(45 495 53)"/>
+          <rect x="590" y="48" width="28" height="28" transform="rotate(45 604 62)"/>
+          <rect x="690" y="42" width="28" height="28" transform="rotate(45 704 56)"/>
+        </g>
+        <circle cx="285" cy="55" r="13" fill="#ff6b3d"/><circle cx="281" cy="51" r="4" fill="#ffd23d"/>
+        <circle cx="495" cy="53" r="13" fill="#3dd6ff"/><circle cx="499" cy="49" r="4" fill="#eaffff"/>
+        <g fill="#ff4ecb" opacity=".85"><text x="140" y="28" font-size="19" font-family="Rubik, sans-serif">♪</text><text x="620" y="26" font-size="16" font-family="Rubik, sans-serif">♫</text></g>
+      </svg>
+      <span class="lbl">Nivel 1 · tutorial</span>
+    </div>
+    <div class="panel reading" style="border-top:none">
+      <p>Fuego y Hielo son dos planetas que bailan juntos por un camino de baldosas. Hielo <span class="vb">nunca</span> pierde el ritmo: es tranquilo y escucha la música. Fuego, en cambio, <span class="vb">casi siempre</span> llega tarde, porque <span class="vb">a menudo</span> mira las estrellas y se olvida del beat.</p>
+      <p>—<span class="vb2">Practica</span> conmigo —dice Hielo—. <span class="vb2">Escucha</span> el metrónomo y <span class="vb2">respira</span>. Los dos practican <span class="vb">todos los días</span>, dos <span class="vb">veces</span> por la mañana y una vez por la noche. Ahora Fuego <span class="vb">casi nunca</span> falla. ¡Y <span class="vb">a veces</span> hasta baila mejor que Hielo!</p>
+    </div>
+    <div class="gloss">
+      <span><b>bailar juntos</b> · 함께 춤추다</span>
+      <span><b>en cambio</b> · 반면에</span>
+      <span><b>olvidarse</b> · 잊다</span>
+      <span><b>respirar</b> · 숨쉬다</span>
+      <span><b>fallar</b> · 실수하다</span>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · DETECTIVE -->
+<section class="slide" id="s9">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--lima)"></span>Comprensión · Modo detective</div>
+    <h2>El texto no lo dice… <span class="accentF">¡pero tú lo sabes!</span></h2>
+    <div class="roundtag" id="detRound">Pregunta 1 / 4</div>
+    <p class="quiz-q" id="detQ"></p>
+    <div class="options" id="detOpts"></div>
+    <p class="explain" id="detExp"></p>
+  </div>
+</section>
+
+<!-- 10 · IMPERATIVO COGNITIVO -->
+<section class="slide" id="s10">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--fuego)"></span>Gramática cognitiva · III</div>
+    <h2>Las <span class="accentF">órdenes</span> del tutorial 👆</h2>
+    <div class="cog">
+      <div class="panel cogbox">
+        <h3>La idea: quítale la -s a TÚ</h3>
+        <div class="orders">
+          <div class="ord"><span class="tu">tú pulsa<b style="color:var(--bad)">s</b></span><span class="ar">→</span><span class="cmd">¡Pulsa!</span></div>
+          <div class="ord"><span class="tu">tú gira<b style="color:var(--bad)">s</b></span><span class="ar">→</span><span class="cmd">¡Gira!</span></div>
+          <div class="ord"><span class="tu">tú corre<b style="color:var(--bad)">s</b></span><span class="ar">→</span><span class="cmd">¡Corre!</span></div>
+          <div class="ord"><span class="tu">tú escribe<b style="color:var(--bad)">s</b></span><span class="ar">→</span><span class="cmd">¡Escribe!</span></div>
+        </div>
+        <p class="bigidea" style="margin-top:8px">El tutorial te habla directo: le quita la <b>-s</b> al «tú» y ya es una orden. <span class="kr">tú 형태에서 -s만 빼면 명령!</span></p>
+      </div>
+      <div class="panel cogbox">
+        <h3>Los ocho rebeldes 👾</h3>
+        <p class="bigidea" style="text-align:left;font-size:16px;line-height:1.95">
+          <b>venir</b> → ¡<span class="hh">ven</span>! · <b>ir</b> → ¡<span class="hh">ve</span>!<br>
+          <b>hacer</b> → ¡<span class="hh">haz</span>! · <b>decir</b> → ¡<span class="hh">di</span>!<br>
+          <b>poner</b> → ¡<span class="hh">pon</span>! · <b>salir</b> → ¡<span class="hh">sal</span>!<br>
+          <b>tener</b> → ¡<span class="hh">ten</span>! · <b>ser</b> → ¡<span class="hh">sé</span>!<br>
+          <span class="g">Estos ocho no siguen la regla: ¡son cortos y fuertes!</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · TABLA IMPERATIVO -->
+<section class="slide" id="s11">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--fuego)"></span>Gramática cognitiva · IV</div>
+    <h2>El tutorial <span class="accentH">completo</span></h2>
+    <div class="tables">
+      <table class="conj panel">
+        <caption>👆 Órdenes normales</caption>
+        <tr><th>-ar</th><td>escuchar → ¡Escuch<span class="end">a</span>!</td></tr>
+        <tr><th>-er</th><td>correr → ¡Corr<span class="end">e</span>!</td></tr>
+        <tr><th>-ir</th><td>abrir → ¡Abr<span class="end">e</span>!</td></tr>
+        <tr><th>truco</th><td>-ar → <span class="end">a</span> · -er/-ir → <span class="end">e</span></td></tr>
+      </table>
+      <table class="conj panel">
+        <caption>🎮 Órdenes de la academia</caption>
+        <tr><th>👂</th><td>¡Escucha la música!</td></tr>
+        <tr><th>⏳</th><td>¡Espera el beat!</td></tr>
+        <tr><th>🌀</th><td>¡Gira con el planeta!</td></tr>
+        <tr><th>💪</th><td>¡Practica otra vez!</td></tr>
+        <tr><th>🧘</th><td>¡Ten paciencia! (rebelde)</td></tr>
+      </table>
+    </div>
+    <p class="notice">💡 Para pedir algo con amabilidad, añade <b>por favor</b>: «Espera, por favor». Y para varias personas se usa otra forma (¡escuchen!, ¡giren!), pero hoy practicamos el <b>tú</b>.</p>
+  </div>
+</section>
+
+<!-- 12 · TUTORIAL DEL PLANETA -->
+<section class="slide" id="s12">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--fuego)"></span>Actividad · ¡Avanza el nivel!</div>
+    <h2>El <span class="accentF">tutorial</span> del planeta 🌀</h2>
+    <p class="lead" style="font-size:15px">Cada orden correcta mueve los planetas UNA baldosa. ¿Llegas al final del nivel? <span class="kr">정답을 맞히면 행성이 나아간다!</span></p>
+    <div class="forge-count" id="impCount">Baldosa 1 / 6</div>
+    <div class="pista">
+      <svg viewBox="0 0 660 120">
+        <g id="tiles">
+          <rect class="tile" id="t0" x="30" y="52" width="38" height="38" transform="rotate(45 49 71)"/>
+          <rect class="tile" id="t1" x="120" y="52" width="38" height="38" transform="rotate(45 139 71)"/>
+          <rect class="tile" id="t2" x="210" y="44" width="38" height="38" transform="rotate(45 229 63)"/>
+          <rect class="tile" id="t3" x="300" y="52" width="38" height="38" transform="rotate(45 319 71)"/>
+          <rect class="tile" id="t4" x="390" y="44" width="38" height="38" transform="rotate(45 409 63)"/>
+          <rect class="tile" id="t5" x="480" y="52" width="38" height="38" transform="rotate(45 499 71)"/>
+          <rect class="tile" id="t6" x="570" y="44" width="38" height="38" transform="rotate(45 589 63)"/>
+        </g>
+        <g id="pHielo"><circle cx="49" cy="71" r="14" fill="#3dd6ff"/><circle cx="54" cy="66" r="4.5" fill="#eaffff"/></g>
+        <g id="pFuego"><circle cx="139" cy="71" r="14" fill="#ff6b3d"/><circle cx="134" cy="66" r="4.5" fill="#ffd23d"/></g>
+        <text x="589" y="26" font-size="17" fill="#ffd23d" text-anchor="middle">🏁</text>
+      </svg>
+    </div>
+    <div class="panel" style="width:100%;max-width:700px"><p class="forge-sentence" id="impSentence" style="font-size:18.5px"></p></div>
+    <div class="endings" id="impOpts"></div>
+    <div class="feedback" id="impFb"></div>
+  </div>
+</section>
+
+<!-- 13 · LECTURA 2 -->
+<section class="slide" id="s13">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--oro)"></span>Lectura 2 · Capítulo dos</div>
+    <h2>El nivel <span class="accentF">imposible</span></h2>
+    <div class="scene">
+      <svg viewBox="0 0 760 96" preserveAspectRatio="xMidYMax slice">
+        <defs><linearGradient id="esc2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a1030"/><stop offset="1" stop-color="#3a1020"/></linearGradient></defs>
+        <rect width="760" height="96" fill="url(#esc2)"/>
+        <g stroke="rgba(255,78,203,.45)" stroke-width="2" fill="rgba(255,78,203,.1)">
+          <rect x="60" y="50" width="26" height="26" transform="rotate(45 73 63)"/>
+          <rect x="150" y="36" width="26" height="26" transform="rotate(45 163 49)"/>
+          <rect x="250" y="56" width="26" height="26" transform="rotate(45 263 69)"/>
+          <rect x="350" y="32" width="26" height="26" transform="rotate(45 363 45)"/>
+          <rect x="450" y="58" width="26" height="26" transform="rotate(45 463 71)"/>
+          <rect x="550" y="34" width="26" height="26" transform="rotate(45 563 47)"/>
+          <rect x="650" y="54" width="26" height="26" transform="rotate(45 663 67)"/>
+        </g>
+        <circle cx="363" cy="45" r="12" fill="#ff6b3d"/>
+        <circle cx="463" cy="71" r="12" fill="#3dd6ff"/>
+        <g fill="#ff4ecb"><rect x="600" y="16" width="8" height="26"/><rect x="612" y="24" width="8" height="18"/><rect x="588" y="26" width="8" height="16"/></g>
+        <g fill="#b6ff3d" opacity=".8"><text x="120" y="24" font-size="17" font-family="Rubik, sans-serif">♪</text></g>
+      </svg>
+      <span class="lbl">Nivel final · glitch</span>
+    </div>
+    <div class="panel reading" style="border-top:none">
+      <p>El nivel final tiene baldosas que desaparecen y un glitch morado que <span class="vb">siempre</span> cambia el ritmo. Fuego <span class="vb">nunca</span> lo termina y <span class="vb">a veces</span> quiere abandonar. —<span class="vb2">No corras</span> —dice el Maestro Metrónomo—. <span class="vb2">Cuenta</span> conmigo: uno, dos, tres, cuatro.</p>
+      <p>—<span class="vb2">Cierra</span> los ojos y <span class="vb2">escucha</span>. <span class="vb2">Ten</span> paciencia y <span class="vb2">sé</span> valiente. Fuego respira. <span class="vb2">Espera</span> el beat… y <span class="vb2">gira</span>. Las baldosas brillan una por una. Al final, la pantalla dice: ¡NIVEL COMPLETO! Hielo sonríe: —Ahora <span class="vb">siempre</span> vas a llegar a tiempo.</p>
+    </div>
+    <div class="gloss">
+      <span><b>desaparecer</b> · 사라지다</span>
+      <span><b>abandonar</b> · 포기하다</span>
+      <span><b>contar</b> · 세다</span>
+      <span><b>la paciencia</b> · 인내심</span>
+      <span><b>valiente</b> · 용감한</span>
+    </div>
+  </div>
+</section>
+
+<!-- 14 · ORDENA -->
+<section class="slide" id="s14">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--lima)"></span>Comprensión · La historia</div>
+    <h2>Ordena la historia <span class="accentF">1 → 5</span></h2>
+    <p class="lead" style="font-size:15px">Toca los momentos en el orden correcto. <span class="kr">이야기 순서대로 누르세요!</span></p>
+    <div class="order-list" id="orderList"></div>
+    <div class="feedback" id="orderFb"></div>
+  </div>
+</section>
+
+<!-- 15 · COMBATE 1 -->
+<section class="slide" id="s15">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--oro)"></span>Combate · ¡El tempo se rompe!</div>
+    <h2>¡El <span class="accentN">Metrónomo Roto</span> acelera todo!</h2>
+    <div class="battlefield" id="battlefield">
+      <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.85" viewBox="0 0 760 240" preserveAspectRatio="xMidYMax slice">
+        <g stroke="rgba(255,255,255,.14)" stroke-width="2" fill="rgba(255,255,255,.04)">
+          <rect x="60" y="180" width="30" height="30" transform="rotate(45 75 195)"/>
+          <rect x="160" y="188" width="30" height="30" transform="rotate(45 175 203)"/>
+          <rect x="580" y="182" width="30" height="30" transform="rotate(45 595 197)"/>
+          <rect x="670" y="190" width="30" height="30" transform="rotate(45 685 205)"/>
+        </g>
+        <g fill="#ff4ecb" opacity=".55"><text x="120" y="60" font-size="20" font-family="Rubik, sans-serif">♪</text><text x="620" y="70" font-size="17" font-family="Rubik, sans-serif">♫</text></g>
+      </svg>
+      <div class="battle-top">
+        <span class="enemy-tag">⚠ Enemigo · Tempo 300 BPM</span>
+        <div class="party" title="El equipo">
+          <i style="background:var(--fuego)"></i><i style="background:var(--hielo)"></i><i style="background:var(--neon)"></i><i style="background:var(--lima)"></i><i style="background:var(--oro)"></i><i style="background:#fff"></i>
+        </div>
+      </div>
+      <div class="arena">
+        <div class="aura"></div>
+        <div class="sprite" id="bossSprite">⏱️</div>
+        <div class="hplabel">Metrónomo Roto · HP</div>
+        <div class="hpbar"><div class="hpfill" id="bossHp"></div></div>
+      </div>
+      <div class="miniSlash" id="miniSlash"></div>
+    </div>
+    <div id="bossGame" style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%">
+      <p class="quiz-q" id="bossQ"></p>
+      <div class="options" id="bossOpts" style="max-width:520px"></div>
+    </div>
+    <div id="bossWin" class="hidden" style="text-align:center">
+      <p class="victory">✦ ¡COMBO PERFECTO! ✦</p>
+      <p class="lead">El metrónomo volvió a su tempo normal 🎵. Pero al fondo del camino, un glitch morado empieza a comerse las baldosas…</p>
+      <button class="btn gold" data-go="16" style="margin-top:12px">Continuar: Acto II ›</button>
+    </div>
+  </div>
+</section>
+
+<!-- 16 · ACTO II -->
+<section class="slide" id="sInter">
+  <div class="inner">
+    <div class="chapter" style="max-width:640px;width:100%">
+      <div class="acto">✦ Acto II ✦</div>
+      <h1>El <span class="accentN">nivel secreto</span></h1>
+      <p class="pausa">🎧 Pausa de 5 minutos · 5분 휴식!</p>
+    </div>
+    <div class="objectives" style="max-width:560px">
+      <div class="obj" style="--qc:var(--hielo)"><span class="qz"></span><span class="mark">JUEGO</span> Memoria de baldosas <span class="kr">· 기억 게임</span></div>
+      <div class="obj" style="--qc:var(--lima)"><span class="qz"></span><span class="mark">HABLAR</span> Entrevista con el DJ Cometa <span class="kr">· 말하기</span></div>
+      <div class="obj" style="--qc:var(--fuego)"><span class="qz"></span><span class="mark">HABLAR</span> ¿Y tú, con qué frecuencia? <span class="kr">· 비교</span></div>
+      <div class="obj" style="--qc:var(--neon)"><span class="qz"></span><span class="mark">ESCUCHAR</span> Dictado del audífono <span class="kr">· 받아쓰기</span></div>
+      <div class="obj" style="--qc:var(--oro)"><span class="qz"></span><span class="mark">COMBATE</span> El Glitch Final <span class="kr">· 최종 보스</span></div>
+    </div>
+    <button class="btn fire" data-go="17">▶ Comenzar Acto II</button>
+  </div>
+</section>
+
+<!-- 17 · MEMORIA -->
+<section class="slide" id="sMemo">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--hielo)"></span>Acto II · Juego</div>
+    <h2>Memoria de <span class="accentH">baldosas</span></h2>
+    <p class="lead" style="font-size:15px">Encuentra las parejas: palabra en español ↔ símbolo y coreano. Di la palabra en voz alta cada vez que encuentres una. <span class="kr">짝을 찾으세요!</span></p>
+    <div class="memo-stats" id="memoStats">Parejas: 0 / 6 · Intentos: 0</div>
+    <div class="memo" id="memoGrid"></div>
+    <div class="feedback" id="memoFb"></div>
+  </div>
+</section>
+
+<!-- 18 · ENTREVISTA -->
+<section class="slide" id="sRol">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--lima)"></span>Acto II · Misión de rol</div>
+    <h2>Entrevista con el <span class="accentL">DJ Cometa</span> 🎧</h2>
+    <div class="cog">
+      <div class="panel cogbox">
+        <h3>1 · Preséntate en el escenario</h3>
+        <div class="rlist" id="rolList"></div>
+      </div>
+      <div class="panel cogbox">
+        <h3>2 · El DJ pregunta 🎙️</h3>
+        <p class="ivq" id="ivQ">Toca el botón y responde en voz alta.</p>
+        <p class="ivhint" id="ivHint"></p>
+        <div style="display:flex;justify-content:center;margin-top:8px">
+          <button class="btn gold" id="ivBtn">🎲 Nueva pregunta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 19 · ¿Y TÚ? -->
+<section class="slide" id="sComp">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--fuego)"></span>Acto II · ¿Y tú?</div>
+    <h2>¿Con qué <span class="accentF">frecuencia</span> lo haces tú?</h2>
+    <p class="lead" style="font-size:15px">Lee cómo es en la academia, elige tu ritmo y dilo en voz alta con un adverbio. <span class="kr">소리 내어 말해 보세요!</span></p>
+    <div class="roundtag" id="compRound">Frase 1 / 5</div>
+    <div class="panel" style="width:100%;max-width:700px"><p class="comp-sent" id="compSent"></p></div>
+    <div class="sort-btns">
+      <button class="sort-btn now" id="compSi">🔥 Siempre / casi siempre<small>Ritmo alto</small></button>
+      <button class="sort-btn past" id="compNo">❄️ A veces / casi nunca<small>Ritmo bajo</small></button>
+    </div>
+    <p class="comp-model" id="compModel"></p>
+  </div>
+</section>
+
+<!-- 20 · DICTADO -->
+<section class="slide" id="sDict">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--neon)"></span>Acto II · Escuchar y escribir</div>
+    <h2>Dictado del <span class="accentN">audífono</span> 🎧</h2>
+    <p class="lead" style="font-size:15px">El DJ te manda un mensaje. Escucha, escribe la frase y comprueba. ¡Cuidado con las tildes! <span class="kr">듣고 쓰세요!</span></p>
+    <div class="roundtag" id="dictRound">Mensaje 1 / 5</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <button class="btn" id="dictPlay">🔊 Escuchar</button>
+      <button class="btn" id="dictSlow">🐢 Más lento</button>
+    </div>
+    <input type="text" class="dict-in" id="dictIn" placeholder="Escribe el mensaje aquí..." autocomplete="off">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <button class="btn gold" id="dictCheck">✦ Comprobar</button>
+      <button class="btn" id="dictNext">Siguiente ›</button>
+    </div>
+    <div class="feedback" id="dictFb"></div>
+    <details class="profe"><summary>👩‍🏫 Solo profe: ver frase</summary><span id="dictSecret"></span></details>
+  </div>
+</section>
+
+<!-- 21 · JEFE FINAL -->
+<section class="slide" id="sBoss2">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--oro)"></span>Combate final · Nivel imposible</div>
+    <h2 id="boss2Title">¡El <span class="accentN">Glitch Final</span> se come las baldosas!</h2>
+    <div class="battlefield final" id="battlefield2">
+      <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.85" viewBox="0 0 760 240" preserveAspectRatio="xMidYMax slice">
+        <g stroke="rgba(255,107,61,.35)" stroke-width="2" fill="rgba(255,107,61,.08)">
+          <rect x="50" y="170" width="30" height="30" transform="rotate(45 65 185)"/>
+          <rect x="150" y="190" width="30" height="30" transform="rotate(45 165 205)"/>
+          <rect x="600" y="176" width="30" height="30" transform="rotate(45 615 191)"/>
+        </g>
+        <g fill="#ff4ecb" opacity=".5">
+          <rect x="90" y="60" width="12" height="34"/><rect x="106" y="72" width="12" height="22"/>
+          <rect x="640" y="54" width="12" height="30"/><rect x="656" y="66" width="12" height="18"/>
+        </g>
+      </svg>
+      <div class="battle-top">
+        <span class="enemy-tag">⚠ Enemigo · Corrupción de datos</span>
+        <div class="party" title="El equipo">
+          <i style="background:var(--fuego)"></i><i style="background:var(--hielo)"></i><i style="background:var(--neon)"></i><i style="background:var(--lima)"></i><i style="background:var(--oro)"></i><i style="background:#fff"></i>
+        </div>
+      </div>
+      <div class="arena">
+        <div class="aura" style="background:radial-gradient(circle, rgba(255,107,61,.5), transparent 65%)"></div>
+        <div class="sprite" id="boss2Sprite">👾</div>
+        <div class="hplabel">Glitch Final · HP</div>
+        <div class="hpbar seg8"><div class="hpfill" id="boss2Hp"></div></div>
+      </div>
+      <div class="miniSlash" id="miniSlash2"></div>
+    </div>
+    <div id="boss2Game" style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%">
+      <p class="quiz-q" id="boss2Q"></p>
+      <div class="options" id="boss2Opts" style="max-width:520px"></div>
+    </div>
+    <div id="boss2Win" class="hidden" style="text-align:center">
+      <p class="victory">🏆 ¡NIVEL COMPLETO! 🏆</p>
+      <p class="lead">El glitch se convirtió en una estrella ⭐ y ahora es la baldosa secreta del nivel bonus. ¡Rango S para ti!</p>
+      <button class="btn gold" data-go="22" style="margin-top:12px">Ver resultados ›</button>
+    </div>
+  </div>
+</section>
+
+<!-- 22 · FINAL -->
+<section class="slide" id="s22">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz" style="background:var(--lima)"></span>Pantalla de resultados</div>
+    <h2>Tu <span class="accentO">rango</span>: escríbelo tú ✦</h2>
+    <p class="lead" style="font-size:15.5px">Último beat: habla de TU vida real con el metrónomo 🎵 y escribe órdenes para un principiante 👆. <span class="kr">너의 이야기를 써 보세요!</span></p>
+    <div class="write panel" style="width:100%">
+      <label>🎵 EL METRÓNOMO · Tu frecuencia real</label>
+      <input type="text" placeholder="1. Siempre... (¿qué haces todos los días?)">
+      <input type="text" placeholder="2. A veces... / Casi nunca...">
+      <input type="text" placeholder="3. Juego videojuegos ... veces por semana.">
+      <label style="margin-top:8px">👆 TRES ÓRDENES · Consejos para un principiante</label>
+      <input type="text" placeholder="4. ¡...! (escucha / practica / espera...)">
+      <input type="text" placeholder="5. ¡...! (ten paciencia / sé valiente / no corras...)">
+    </div>
+    <p class="notice">El metrónomo dice <b>cuántas veces</b> (siempre → nunca) y la orden es el <b>tú sin la -s</b> (pulsas → ¡pulsa!). ¡Fin del nivel, jugadora! 🎮</p>
+  </div>
+</section>
+
+</div>
+
+<div id="dots"></div>
+  <script src="script.js"></script>
+</body>
+</html>
